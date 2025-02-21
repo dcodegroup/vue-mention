@@ -24,7 +24,8 @@
     "dev": "cross-env NODE_ENV=development vite build --watch",
     "build": "cross-env NODE_ENV=production vite build && tsc -d --emitDeclarationOnly && vue-typegen gen -s src -o dist",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
-    "lint": "eslint --ext .ts,.js,.vue src"
+    "lint": "eslint --ext .ts,.js,.vue src",
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -39,11 +40,11 @@
     "access": "public"
   },
   "dependencies": {
-    "textarea-caret": "^3.1.0"
+    "textarea-caret": "^3.1.0",
+    "vue": "^3.5.13"
   },
   "peerDependencies": {
-    "floating-vue": "^2.0.0-beta.1",
-    "vue": "^3.2"
+    "floating-vue": "^2.0.0-beta.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -64,11 +65,10 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^9.7.0",
-    "typescript": "^4.5.4",
+    "floating-vue": "^2.0.0-beta.1",
+    "typescript": "^5.7.3",
     "vite": "^2.7.10",
-    "vue": "^3.2.26",
-    "vue-typegen": "^0.1.1",
-    "floating-vue": "^2.0.0-beta.1"
+    "vue-typegen": "^0.1.1"
   },
   "browserslist": [
     "> 1%",
