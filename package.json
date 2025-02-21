@@ -1,7 +1,7 @@
 {
-  "name": "vue-mention-monorepo",
+  "name": "@dcodegroup/vue-mention-monorepo",
   "version": "2.0.1",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
