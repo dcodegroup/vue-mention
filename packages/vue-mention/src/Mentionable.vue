@@ -49,6 +49,11 @@ export default defineComponent({
       default: false,
     },
 
+    allowSpace: {
+      type: Boolean,
+      default: false,
+    },
+
     mapInsert: {
       type: Function as PropType<(item: MentionItem, key: string) => string>,
       default: null,
@@ -77,8 +82,9 @@ export default defineComponent({
     let currentKeyIndex: number
     const oldKey = ref<string>(null)
 
-    // Items
+    const isMentioning = ref<boolean>(false)
 
+    // Items
     const searchText = ref<string>(null)
 
     watch(searchText, (value, oldValue) => {
@@ -259,7 +265,10 @@ export default defineComponent({
         if (!(keyIndex < 1 || /\s/.test(getValue()[keyIndex - 1]))) {
           return false
         }
-        if (text != null) {
+
+        const keyIsBeforeCaret = getValue()[index - 1] === key
+        const shouldOpen = props.allowSpace ? isMentioning.value || keyIsBeforeCaret : true
+        if (text != null && shouldOpen) {
           openMenu(key, keyIndex)
           searchText.value = text
           return true
@@ -280,6 +289,9 @@ export default defineComponent({
     function getLastSearchText (caretIndex: number, keyIndex: number) {
       if (keyIndex !== -1) {
         const text = getValue().substring(keyIndex + 1, caretIndex)
+        if (props.allowSpace) {
+          return text.trim()
+        }
         // If there is a space we close the menu
         if (!/\s/.test(text)) {
           return text
@@ -323,6 +335,7 @@ export default defineComponent({
         updateCaretPosition()
         selectedIndex.value = 0
         emit('open', currentKey.value)
+        isMentioning.value = true
       }
     }
 
@@ -330,6 +343,7 @@ export default defineComponent({
       if (currentKey.value != null) {
         oldKey.value = currentKey.value
         currentKey.value = null
+        isMentioning.value = false
         emit('close', oldKey.value)
       }
     }
@@ -366,6 +380,7 @@ export default defineComponent({
       displayedItems,
       selectedIndex,
       applyMention,
+      isMentioning,
     }
   },
 })
