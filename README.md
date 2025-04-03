@@ -1,27 +1,10 @@
-<p align="center">
-  <a href="https://vue-mention.netlify.app/" target="_blank">
-    <img src="./packages/docs/src/.vuepress/public/vue-mention.svg" alt="logo" width="128">
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://www.npmjs.com/package/vue-mention">
-    <img src="https://img.shields.io/npm/v/vue-mention.svg" alt="Version">
-  </a>
-  <a href="https://www.npmjs.com/package/vue-mention">
-    <img src="https://img.shields.io/npm/dm/vue-mention.svg" alt="Downloads">
-  </a>
-</p>
+<img src="../docs/src/.vuepress/public/vue-mention.svg" alt="logo" width="128">
 
 # vue-mention
 
 Mention popper for input and textarea
 
 [Documentation](https://vue-mention.netlify.app/)
-
-## Sponsors
-
-[![sponsors logos](https://guillaume-chau.info/sponsors.png)](https://guillaume-chau.info/sponsors)
 
 ## Quick start
 
