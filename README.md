@@ -5,6 +5,16 @@
 Mention popper for input and textarea
 
 [Documentation](https://vue-mention.netlify.app/)
+## PNPM
+Vue 3.x.x support 
+```shell
+npm install @dcodegroup-au/vue-mention@0.0.2 --save
+```
+
+Vue 2.x.x support
+```shell
+npm install @dcodegroup-au/vue-mention@2.0.2 --save
+```
 
 ## Quick start
 
