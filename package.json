@@ -1,7 +1,7 @@
 {
   "name": "@dcodegroup/vue-mention",
   "description": "Mention popper for input and textarea",
-  "version": "0.0.2",
+  "version": "3.0.0",
   "author": "Dcode Group",
   "keywords": [
     "vue",
